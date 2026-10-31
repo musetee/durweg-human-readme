@@ -11,8 +11,7 @@
 需要先装好 Durweg（[安装 Durweg](https://github.com/musetee/durweg/blob/v1-dev/README_cn.md)）。
 
 1. **打开终端**（和 Durweg 的“每天怎么用”第 1 步一样）。
-2. **下载这个工作流：** `git clone https://github.com/musetee/durweg-human-readme.git ~/projects/durweg-human-readme`。没有 git 的话，在 GitHub 页面点 **Code → Download ZIP**，解压到 `~/projects/durweg-human-readme`。
-3. **放进方法库：** `durweg library add ~/projects/durweg-human-readme --name human-readme`
+2. **装进方法库：** `durweg library add https://github.com/musetee/durweg-human-readme.git --name human-readme`。它会把工作流下载到 `~/Durweg/workflows/human-readme/` 并登记。需要电脑上有 git；没有 git 的话，在 GitHub 页面点 **Code → Download ZIP**，解压到一个文件夹，再运行 `durweg library add <那个文件夹> --name human-readme`。
 
 看到 `added human-readme`，并且 `durweg library list` 里有 `human-readme`，就装好了。
 
@@ -38,7 +37,7 @@
 | :--- | :--- |
 | 看这个工作流是怎么做出来的 | [案例网页](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4) |
 | 改成自己的写法 | 用 Durweg 的 write-your-method 做一个自己的版本；或者照 [工作流格式](https://github.com/musetee/durweg/blob/v1-dev/docs/workflow-format_cn.md) 改 `workflow.json` 和 `skills/human-readme/SKILL.md` |
-| 不用了 | `durweg library remove human-readme`，再删掉这个文件夹 |
+| 不用了 | `durweg library remove human-readme`，再删掉 `~/Durweg/workflows/human-readme/` |
 
 ---
 

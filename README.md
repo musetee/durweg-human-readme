@@ -14,9 +14,10 @@ was written, and then used to rewrite Durweg's own README. The whole story is on
 You need Durweg first ([install Durweg](https://github.com/musetee/durweg/blob/v1-dev/README.md)).
 
 1. **Open a terminal** (as in step 1 of Durweg's "Every day").
-2. **Get this workflow:** `git clone https://github.com/musetee/durweg-human-readme.git ~/projects/durweg-human-readme`.
-   Without git, click **Code → Download ZIP** on GitHub and unzip it to `~/projects/durweg-human-readme`.
-3. **Put it in your library:** `durweg library add ~/projects/durweg-human-readme --name human-readme`
+2. **Add it to your library:** `durweg library add https://github.com/musetee/durweg-human-readme.git --name human-readme`.
+   It downloads the workflow to `~/Durweg/workflows/human-readme/` and registers it. This needs git;
+   without git, click **Code → Download ZIP** on GitHub, unzip it to a folder and run
+   `durweg library add <that folder> --name human-readme`.
 
 Done looks like this: it prints `added human-readme`, and `durweg library list` lists `human-readme`.
 
@@ -42,7 +43,7 @@ Start your agent in the folder of the project whose README you write and tell it
 | :--- | :--- |
 | See how this workflow was made | [case page](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4) |
 | Make it my own | Make your own version with Durweg's write-your-method, or edit `workflow.json` and `skills/human-readme/SKILL.md` following the [workflow format](https://github.com/musetee/durweg/blob/v1-dev/docs/workflow-format.md) |
-| Stop using it | `durweg library remove human-readme`, then delete this folder |
+| Stop using it | `durweg library remove human-readme`, then delete `~/Durweg/workflows/human-readme/` |
 
 ---
 
