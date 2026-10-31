@@ -4,7 +4,7 @@
 
 **一个 [Durweg](https://github.com/musetee/durweg) 工作流：让 AI agent 按固定的 7 步给项目写 README，第一次来的人能在第一屏看懂项目解决什么问题、选对安装路线、跑通一个案例。**
 
-它是用 Durweg 自带的引导 write-your-method 做出来的，方法照的是 AIagents 项目的 README 写法；做出来以后，用它重写了 Durweg 自己的 README。整个过程见[案例网页](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4)（本仓库里也有一份：[case/human-readme.html](case/human-readme.html)）。
+它是用 Durweg 自带的引导 write-your-method 做出来的，方法照的是 AIagents 项目的 README 写法；做出来以后，用它重写了 Durweg 自己的 README。整个过程见[案例网页](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4#zh)（中英文可以切换，默认英文；本仓库里也有一份：[case/human-readme.html](case/human-readme.html)）。
 
 ## 🧭 安装
 
@@ -35,7 +35,7 @@
 
 | 我想 | 怎么做 |
 | :--- | :--- |
-| 看这个工作流是怎么做出来的 | [案例网页](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4) |
+| 看这个工作流是怎么做出来的 | [案例网页](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4#zh) |
 | 改成自己的写法 | 用 Durweg 的 write-your-method 做一个自己的版本；或者照 [工作流格式](https://github.com/musetee/durweg/blob/main/docs/workflow-format_cn.md) 改 `workflow.json` 和 `skills/human-readme/SKILL.md` |
 | 不用了 | `durweg library remove human-readme`，再删掉 `~/Durweg/workflows/human-readme/` |
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh"><head><meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>写给人看的 README（照 aiagents-public 的做法） · Durweg 案例</title><style>
+<title>A README for people · 写给人看的 README · Durweg case</title><style>
 body{font:16px/1.65 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#1f2328;
 background:#f6f8fa;margin:0}
 main{max-width:860px;margin:2.5rem auto;padding:2rem 2.5rem;background:#fff;border:1px solid #d0d7de;
@@ -20,18 +20,56 @@ blockquote{margin:.4rem 0 .9rem;padding:.5rem .9rem;border-left:4px solid #1f883
 .pass{color:#1a7f37;font-weight:600}
 code{background:#eff1f3;border-radius:4px;padding:.1rem .3rem;font-size:.9em}
 footer{margin-top:2.5rem;color:#57606a;font-size:.85rem}
+
+main{position:relative}
+.langs{position:absolute;top:1.2rem;right:1.5rem;display:flex;gap:.3rem}
+.langs button{font:inherit;font-size:.85rem;border:1px solid #d0d7de;background:#fff;color:#1f2328;
+border-radius:999px;padding:.15rem .75rem;cursor:pointer}
+.langs button[aria-pressed=true]{background:#0969da;border-color:#0969da;color:#fff}
+[data-lang]{display:none}
+html.en [data-lang=en],html.zh [data-lang=zh]{display:block}
+html:not(.en):not(.zh) [data-lang=en]{display:block}
 </style></head>
 <body><main>
+<div class="langs" role="group" aria-label="Language"><button type="button" data-to="en" aria-pressed="true">English</button><button type="button" data-to="zh" aria-pressed="false" lang="zh">中文</button></div>
+<div data-lang="en">
+<header><span class="tag">Durweg case</span><h1>A README for people (the aiagents-public way)</h1>
+<p>Made with Durweg on 2026-10-31. Workflow: human-readme.</p></header>
+<h2>The method</h2>
+<h3>Task</h3>
+<p>Write a project's README (the front page, for people) the way aiagents-public does it: someone who comes for the first time sees on the first screen what problem the project solves, picks the one way to install for their computer, knows how to use it every day and where their files are, gets an example working, and knows where to go next.</p>
+<h3>How I do it</h3>
+<ul><li>Find the core: one sentence with the project's core value and the problem it solves, as the README's first sentence; no story, no list of features</li><li>Pick the reader and the default path: write for a first-time user by default; one install line per kind of computer, saying which line the easily confused cases take (e.g. WSL on Windows uses the Windows installer)</li><li>Build the front page, each part its own section: install (only installing) → every day (numbered small steps, the first says how to open the terminal) → where the files are and how to find them → example (its first sentence says what it shows and makes, and it refers to the daily steps) → I want to … (one task per line, with a link) → the list of explanations at the end</li><li>Move details off the front page: step-by-step install, special regions, uninstall, full option and command tables each get their own page (in Chinese and English); the front page keeps one sentence and a link</li><li>Walk it once for real: on a new computer or a new WSL, follow the front page from the start until the example succeeds; write down where it was verified, the result and what was not verified</li><li>The user reads it with a beginner's eyes and gives comments one by one</li><li>Change this project's README by the comments, Chinese and English together, one thing at a time</li><li>After each comment is done, ask the user whether it should become a general rule; if yes, update the human-docs rules (Chinese, English and the short version) and write the reason in the CHANGELOG</li><li>Repeat "walk it → read → change" until the user is happy</li></ul>
+<h3>Where it goes wrong</h3>
+<ul><li>The first sentence tells a story or lists features, so you cannot see what problem it solves</li><li>WSL users take the Linux line as theirs</li><li>Beginners do not know how to get into a terminal or into WSL</li><li>One paragraph holds several actions and is hard to read</li><li>Install, everyday use, where projects live and the trial are mixed in one section</li><li>A prompt that appears during a step (e.g. Codex's "hooks are new or changed") is not explained and scares beginners</li><li>Screenshots nobody understands</li><li>Table cells that are too long</li><li>Saying it works without walking it once</li><li>The Chinese and English versions drift apart</li></ul>
+<h3>Where I decide</h3>
+<ul><li>How the first sentence (the core value) is worded</li><li>Whether I am happy with the README after each round</li><li>Whether a new requirement of mine becomes a general rule</li></ul>
+<h2>The steps</h2>
+<table><tr><th>#</th><th>Step</th><th>What it does</th><th>What it delivers</th><th>The user decides</th></tr>
+<tr><td>1</td><td><b>The core: the first sentence</b></td><td>Read the project's code and existing docs; write the core value and the problem it solves in one sentence (no story, no list of features), in Chinese and English</td><td>steps/1-core.md: the first sentence in Chinese and English, and what it is based on</td><td>yes</td></tr><tr><td>2</td><td><b>Readers and install entries</b></td><td>Write for a first-time user by default; list the computers readers use, one install line each, and say which line the easily confused cases (e.g. WSL on Windows) take</td><td>steps/2-readers.md: the reader, the default path, a table with one entry per kind of computer</td><td></td></tr><tr><td>3</td><td><b>Build the front page</b></td><td>Write README and README_cn: install (only installing), every day (numbered small steps, the first says how to open the terminal), where the files are, example (its first sentence says what it shows and makes), I want to …, the list of explanations at the end; no empty sections</td><td>First drafts of README.md and README_cn.md</td><td></td></tr><tr><td>4</td><td><b>Move details off the front page</b></td><td>Step-by-step install, special regions, uninstall, full option and command tables each get a page (Chinese and English); the front page keeps one sentence and a link for each; check local links and anchors</td><td>Pages under docs/, and the links to them on the front page</td><td></td></tr><tr><td>5</td><td><b>Walk it once for real</b></td><td>On a new computer or a new WSL, follow the front page from the start until the example succeeds; fix a wrong step first</td><td>steps/5-walkthrough.md: where it was verified, the result of each step, what was not verified</td><td></td></tr><tr><td>6</td><td><b>The user reads it as a beginner; change it</b></td><td>Ask the user to read the front page and comment point by point; change Chinese and English together, one thing at a time, until the user is happy</td><td>steps/6-review.md: each comment, what was changed (commit), and the user's own words when happy</td><td>yes</td></tr><tr><td>7</td><td><b>Decide what becomes a general rule</b></td><td>For each new requirement, ask the user whether it becomes a general rule; if yes, update human-docs (Chinese, English and the short version) together and write the reason in the CHANGELOG</td><td>steps/7-rules.md: the decision for each requirement, and the files changed</td><td>yes</td></tr></table>
+<h2>The user's own words</h2>
+<p>Every step where the user decides went on only after the user confirmed it. What the user said (in Chinese, translated):</p>
+<p class='who'>Describe your method</p><blockquote>No problem, that's roughly it</blockquote><p class='who'>Split into steps</p><blockquote>OK</blockquote><p class='who'>Generate the workflow</p><blockquote>No problem, this workflow can be used</blockquote><p class='who'>Try it once</p><blockquote>Confirmed, it can be written up as a classic case</blockquote>
+<h2>The first run</h2>
+<p>The new workflow was run right after it was made: run <code>2026-10-31_durweg-readme</code>, check result <span class='pass'>PASS</span>.</p>
+<p>The user's decisions in that run:</p><p class='who'>The core: the first sentence</p><blockquote>Very good</blockquote><p class='who'>The user reads it as a beginner; change it</p><blockquote>Very happy with it</blockquote><p class='who'>Decide what becomes a general rule</p><blockquote>Make it a general rule (recommended)</blockquote>
+<h2>Lessons</h2>
+<ul><li>The README's first sentence tells no story; it only says the project's core value and the problem it solves.</li><li>Always read it with a beginner's eyes when it is written: where reading stops, change that, one thing at a time.</li><li>Each section heading gets an emoji; content comparing items on the same points goes in a table, steps done in order in a numbered list.</li><li>Only real use shows what is missing: for example, after installing Codex first and Claude later, you do not know whether Claude can use Durweg; questions like this go into the common problems.</li><li>After each new requirement is done, ask: should this become a general rule for every project from now on?</li></ul>
+<h2>Use this workflow yourself</h2>
+<p>With Durweg installed, put the workflow folder human-readme into your library (durweg library add &lt;folder&gt; --name human-readme), then tell your agent: "Run human-readme with durweg." The workflow's own texts are in Chinese.</p>
+<footer>Durweg · <code>human-readme</code></footer>
+</div>
+<div data-lang="zh" lang="zh">
 <header><span class="tag">Durweg 案例</span><h1>写给人看的 README（照 aiagents-public 的做法）</h1>
 <p>用 Durweg 制作于 2026-10-31。工作流：human-readme。</p></header>
 <h2>方法</h2>
-<h3>Task</h3>
+<h3>任务</h3>
 <p>给一个项目写 README（写给人看的首页），做到 aiagents-public 那样：第一次来的人在第一屏看懂项目解决什么问题，按自己的电脑选一条路装好，知道每天怎么用、文件在哪，跑通一个案例，并知道下一步去哪。</p>
-<h3>How I do it</h3>
+<h3>我怎么做</h3>
 <ul><li>定核心：用一句话写出项目的核心价值和它解决的问题，作为 README 第一句；不讲故事，不罗列功能</li><li>定读者和默认路径：默认写给第一次用的人；按电脑种类各给一行安装入口，写明容易混的情况走哪一行（如 Windows 里的 WSL 用 Windows 安装包）</li><li>搭首页骨架，各自成节：安装（只写安装）→ 每天怎么用（编号小步，第一步写怎么打开终端）→ 文件放在哪里、怎么找到 → 案例（第一句说它展示什么、做出什么，引用每天的步骤）→ 我想……（一行一个任务加链接）→ 末尾的说明列表</li><li>把细节移出首页：分步安装指南、特殊地区、卸载、参数和命令全表各放一页（中英两版），首页只留一句加链接</li><li>实际走一遍：在新电脑或新 WSL 上照着首页从头做到案例成功，记下在哪里验证过、结果、哪些没验证</li><li>用户以新手的眼光读，一条一条提意见</li><li>按意见改这个项目的 README，中英文一起改，一次只改一件事</li><li>每条意见改完后问用户：要不要变成通用规则；要的话更新 human-docs 规则（中英文和精简版）并在 CHANGELOG 写明原因</li><li>重复“走一遍 → 读 → 改”，直到用户满意</li></ul>
-<h3>Where it goes wrong</h3>
+<h3>容易出错的地方</h3>
 <ul><li>第一句讲故事或罗列功能，看不出解决什么问题</li><li>WSL 用户把 Linux 那一行当成自己的</li><li>新手不知道怎么进入终端或 WSL</li><li>一段话里塞好几个动作，读不下去</li><li>安装、每天怎么用、项目放在哪、试用混在一节里</li><li>步骤里冒出的提示（如 Codex 的 “hooks are new or changed”）没解释，把新手吓住</li><li>截图看不懂</li><li>表格单元格太长</li><li>没实际走一遍就说能跑通</li><li>中文版和英文版不同步</li></ul>
-<h3>Where I decide</h3>
+<h3>由我拍板的地方</h3>
 <ul><li>第一句（核心价值）怎么写</li><li>每一轮改完的 README 我是否满意</li><li>我提的新要求要不要变成通用规则</li></ul>
 <h2>步骤</h2>
 <table><tr><th>#</th><th>步骤</th><th>做什么</th><th>交出什么</th><th>由用户决定</th></tr>
@@ -47,4 +85,26 @@ footer{margin-top:2.5rem;color:#57606a;font-size:.85rem}
 <h2>自己用这个工作流</h2>
 <p>装好 Durweg 以后，把工作流文件夹 human-readme 放进方法库（durweg library add &lt;文件夹&gt; --name human-readme），然后对 agent 说：“用 durweg 运行 human-readme”。</p>
 <footer>Durweg · <code>human-readme</code></footer>
-</main></body></html>
+</div>
+</main>
+<script>
+(function(){
+  var root=document.documentElement, titles={en:"A README for people · Durweg case",
+    zh:"写给人看的 README（照 aiagents-public 的做法） · Durweg 案例"};
+  function show(l){
+    root.className=l; root.lang=l==="zh"?"zh":"en"; document.title=titles[l];
+    var b=document.querySelectorAll(".langs button");
+    for(var i=0;i<b.length;i++) b[i].setAttribute("aria-pressed", b[i].dataset.to===l);
+  }
+  function fromHash(){ var h=location.hash.slice(1); return h==="zh"||h==="en"?h:null; }
+  var saved=null; try{ saved=localStorage.getItem("durweg-case-lang"); }catch(e){}
+  show(fromHash()||(saved==="zh"?"zh":"en"));
+  document.querySelector(".langs").addEventListener("click",function(e){
+    var l=e.target.dataset&&e.target.dataset.to; if(!l) return;
+    show(l); try{ localStorage.setItem("durweg-case-lang",l); }catch(err){}
+    if(location.hash.slice(1)!==l) history.replaceState(null,"","#"+l);
+  });
+  window.addEventListener("hashchange",function(){ var l=fromHash(); if(l) show(l); });
+})();
+</script>
+</body></html>
