@@ -4,8 +4,7 @@
 
 **A [Durweg](https://github.com/musetee/durweg) workflow that has AI agents write a project's README in 7 fixed steps, so that a first-time reader understands on the first screen what the project solves, picks the right way to install it and gets one example working.**
 
-It was made with Durweg's own guide write-your-method, following the way the README of the AIagents
-project was written, and then used to rewrite Durweg's own README. The whole story is on the
+It was made with Durweg's own guide write-your-method and then used to rewrite Durweg's own README. The whole story is on the
 [case page](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4) (English, with a switch to Chinese; a copy is in this repository:
 [case/human-readme.html](case/human-readme.html)). The workflow's texts are in Chinese.
 

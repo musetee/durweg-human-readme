@@ -1,9 +1,9 @@
 ---
 name: human-readme
-description: 写给人看的 README（照 aiagents-public 的做法） - the user's own method, run step by step with Durweg.
+description: 写给人看的 README - the user's own method, run step by step with Durweg.
 ---
 
-# 写给人看的 README（照 aiagents-public 的做法）
+# 写给人看的 README
 
 Run it with durweg (skill run-workflow): `durweg start human-readme <name-of-this-run>`, then for each step `durweg begin`, do the step, write its file, and `durweg done`. Talk to the user in the language set in ~/Durweg/config.json.
 
