@@ -4,11 +4,11 @@
 
 **一个 [Durweg](https://github.com/musetee/durweg) 工作流：让 AI agent 按固定的 7 步给项目写 README，第一次来的人能在第一屏看懂项目解决什么问题、选对安装路线、跑通一个案例。**
 
-它是用 Durweg 自带的引导 write-your-method 做出来的，方法照的是 aiagents-public 的 README 写法；做出来以后，用它重写了 Durweg 自己的 README。整个过程见[案例网页](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4)（本仓库里也有一份：[case/human-readme.html](case/human-readme.html)）。
+它是用 Durweg 自带的引导 write-your-method 做出来的，方法照的是 AIagents 项目的 README 写法；做出来以后，用它重写了 Durweg 自己的 README。整个过程见[案例网页](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4)（本仓库里也有一份：[case/human-readme.html](case/human-readme.html)）。
 
 ## 🧭 安装
 
-需要先装好 Durweg（[安装 Durweg](https://github.com/musetee/durweg/blob/v1-dev/README_cn.md)）。
+需要先装好 Durweg（[安装 Durweg](https://github.com/musetee/durweg/blob/main/README_cn.md)）。
 
 1. **打开终端**（和 Durweg 的“每天怎么用”第 1 步一样）。
 2. **装进方法库：** `durweg library add https://github.com/musetee/durweg-human-readme.git --name human-readme`。它会把工作流下载到 `~/Durweg/workflows/human-readme/` 并登记。需要电脑上有 git；没有 git 的话，在 GitHub 页面点 **Code → Download ZIP**，解压到一个文件夹，再运行 `durweg library add <那个文件夹> --name human-readme`。
@@ -36,7 +36,7 @@
 | 我想 | 怎么做 |
 | :--- | :--- |
 | 看这个工作流是怎么做出来的 | [案例网页](https://claude.ai/artifact/LGnCog4wnBmgMAWJg1Xmi4) |
-| 改成自己的写法 | 用 Durweg 的 write-your-method 做一个自己的版本；或者照 [工作流格式](https://github.com/musetee/durweg/blob/v1-dev/docs/workflow-format_cn.md) 改 `workflow.json` 和 `skills/human-readme/SKILL.md` |
+| 改成自己的写法 | 用 Durweg 的 write-your-method 做一个自己的版本；或者照 [工作流格式](https://github.com/musetee/durweg/blob/main/docs/workflow-format_cn.md) 改 `workflow.json` 和 `skills/human-readme/SKILL.md` |
 | 不用了 | `durweg library remove human-readme`，再删掉 `~/Durweg/workflows/human-readme/` |
 
 ---
