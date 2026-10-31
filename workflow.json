@@ -1,0 +1,156 @@
+{
+  "id": "human-readme",
+  "title": "写给人看的 README（照 aiagents-public 的做法）",
+  "skill": "skills/human-readme",
+  "steps": [
+    {
+      "id": "core",
+      "title": "定核心：第一句",
+      "instructions": "skills/human-readme/SKILL.md#1-core",
+      "artifacts": [
+        "steps/1-core.md"
+      ],
+      "gates": [
+        {
+          "type": "sections",
+          "file": "steps/1-core.md",
+          "headings": [
+            {
+              "title": "Result",
+              "min_chars": 20
+            }
+          ]
+        },
+        {
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "readers",
+      "title": "定读者和安装入口",
+      "instructions": "skills/human-readme/SKILL.md#2-readers",
+      "artifacts": [
+        "steps/2-readers.md"
+      ],
+      "gates": [
+        {
+          "type": "sections",
+          "file": "steps/2-readers.md",
+          "headings": [
+            {
+              "title": "Result",
+              "min_chars": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skeleton",
+      "title": "搭首页骨架",
+      "instructions": "skills/human-readme/SKILL.md#3-skeleton",
+      "artifacts": [
+        "steps/3-skeleton.md"
+      ],
+      "gates": [
+        {
+          "type": "sections",
+          "file": "steps/3-skeleton.md",
+          "headings": [
+            {
+              "title": "Result",
+              "min_chars": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "details",
+      "title": "把细节移出首页",
+      "instructions": "skills/human-readme/SKILL.md#4-details",
+      "artifacts": [
+        "steps/4-details.md"
+      ],
+      "gates": [
+        {
+          "type": "sections",
+          "file": "steps/4-details.md",
+          "headings": [
+            {
+              "title": "Result",
+              "min_chars": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "title": "实际走一遍",
+      "instructions": "skills/human-readme/SKILL.md#5-walkthrough",
+      "artifacts": [
+        "steps/5-walkthrough.md"
+      ],
+      "gates": [
+        {
+          "type": "sections",
+          "file": "steps/5-walkthrough.md",
+          "headings": [
+            {
+              "title": "Result",
+              "min_chars": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "title": "用户以新手眼光读并改",
+      "instructions": "skills/human-readme/SKILL.md#6-review",
+      "artifacts": [
+        "steps/6-review.md"
+      ],
+      "gates": [
+        {
+          "type": "sections",
+          "file": "steps/6-review.md",
+          "headings": [
+            {
+              "title": "Result",
+              "min_chars": 20
+            }
+          ]
+        },
+        {
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "rules",
+      "title": "决定要不要变成通用规则",
+      "instructions": "skills/human-readme/SKILL.md#7-rules",
+      "artifacts": [
+        "steps/7-rules.md"
+      ],
+      "gates": [
+        {
+          "type": "sections",
+          "file": "steps/7-rules.md",
+          "headings": [
+            {
+              "title": "Result",
+              "min_chars": 20
+            }
+          ]
+        },
+        {
+          "type": "user"
+        }
+      ]
+    }
+  ]
+}

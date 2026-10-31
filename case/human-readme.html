@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>写给人看的 README（照 aiagents-public 的做法） · Durweg 案例</title><style>
+body{font:16px/1.65 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#1f2328;
+background:#f6f8fa;margin:0}
+main{max-width:860px;margin:2.5rem auto;padding:2rem 2.5rem;background:#fff;border:1px solid #d0d7de;
+border-radius:12px}
+header p{color:#57606a;margin:.2rem 0 0}
+.tag{display:inline-block;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:#0969da;
+background:#ddf4ff;border-radius:999px;padding:.15rem .7rem}
+h1{font-size:1.9rem;margin:.6rem 0 .2rem}
+h2{font-size:1.3rem;margin:2.2rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid #d8dee4}
+h3{font-size:1.05rem;margin:1.2rem 0 .4rem}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid #d0d7de;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:#f6f8fa}
+blockquote{margin:.4rem 0 .9rem;padding:.5rem .9rem;border-left:4px solid #1f883d;background:#f0fff4}
+.who{font-size:.85rem;color:#57606a;margin-top:.8rem}
+.pass{color:#1a7f37;font-weight:600}
+code{background:#eff1f3;border-radius:4px;padding:.1rem .3rem;font-size:.9em}
+footer{margin-top:2.5rem;color:#57606a;font-size:.85rem}
+</style></head>
+<body><main>
+<header><span class="tag">Durweg 案例</span><h1>写给人看的 README（照 aiagents-public 的做法）</h1>
+<p>用 Durweg 制作于 2026-10-31。工作流：human-readme。</p></header>
+<h2>方法</h2>
+<h3>Task</h3>
+<p>给一个项目写 README（写给人看的首页），做到 aiagents-public 那样：第一次来的人在第一屏看懂项目解决什么问题，按自己的电脑选一条路装好，知道每天怎么用、文件在哪，跑通一个案例，并知道下一步去哪。</p>
+<h3>How I do it</h3>
+<ul><li>定核心：用一句话写出项目的核心价值和它解决的问题，作为 README 第一句；不讲故事，不罗列功能</li><li>定读者和默认路径：默认写给第一次用的人；按电脑种类各给一行安装入口，写明容易混的情况走哪一行（如 Windows 里的 WSL 用 Windows 安装包）</li><li>搭首页骨架，各自成节：安装（只写安装）→ 每天怎么用（编号小步，第一步写怎么打开终端）→ 文件放在哪里、怎么找到 → 案例（第一句说它展示什么、做出什么，引用每天的步骤）→ 我想……（一行一个任务加链接）→ 末尾的说明列表</li><li>把细节移出首页：分步安装指南、特殊地区、卸载、参数和命令全表各放一页（中英两版），首页只留一句加链接</li><li>实际走一遍：在新电脑或新 WSL 上照着首页从头做到案例成功，记下在哪里验证过、结果、哪些没验证</li><li>用户以新手的眼光读，一条一条提意见</li><li>按意见改这个项目的 README，中英文一起改，一次只改一件事</li><li>每条意见改完后问用户：要不要变成通用规则；要的话更新 human-docs 规则（中英文和精简版）并在 CHANGELOG 写明原因</li><li>重复“走一遍 → 读 → 改”，直到用户满意</li></ul>
+<h3>Where it goes wrong</h3>
+<ul><li>第一句讲故事或罗列功能，看不出解决什么问题</li><li>WSL 用户把 Linux 那一行当成自己的</li><li>新手不知道怎么进入终端或 WSL</li><li>一段话里塞好几个动作，读不下去</li><li>安装、每天怎么用、项目放在哪、试用混在一节里</li><li>步骤里冒出的提示（如 Codex 的 “hooks are new or changed”）没解释，把新手吓住</li><li>截图看不懂</li><li>表格单元格太长</li><li>没实际走一遍就说能跑通</li><li>中文版和英文版不同步</li></ul>
+<h3>Where I decide</h3>
+<ul><li>第一句（核心价值）怎么写</li><li>每一轮改完的 README 我是否满意</li><li>我提的新要求要不要变成通用规则</li></ul>
+<h2>步骤</h2>
+<table><tr><th>#</th><th>步骤</th><th>做什么</th><th>交出什么</th><th>由用户决定</th></tr>
+<tr><td>1</td><td><b>定核心：第一句</b></td><td>读项目代码和现有文档，用一句话写出核心价值和它解决的问题（不讲故事，不罗列功能），中英各一句</td><td>steps/1-core.md：第一句的中文和英文，以及依据</td><td>是</td></tr><tr><td>2</td><td><b>定读者和安装入口</b></td><td>默认写给第一次用的人；列出读者会用的电脑，每种一行安装入口，写明容易混的情况（如 Windows 里的 WSL）走哪一行</td><td>steps/2-readers.md：读者、默认路径、每种电脑一行的入口表</td><td></td></tr><tr><td>3</td><td><b>搭首页骨架</b></td><td>写 README 和 README_cn：安装（只写安装）、每天怎么用（编号小步，第一步写怎么打开终端）、文件在哪里、案例（第一句说展示什么、做出什么）、我想……、末尾说明列表；没内容的节不建</td><td>README.md 和 README_cn.md 的初稿</td><td></td></tr><tr><td>4</td><td><b>把细节移出首页</b></td><td>分步安装、特殊地区、卸载、参数和命令全表等各放一页（中英两版），首页每项只留一句加链接；检查本地链接和锚点</td><td>docs/ 下的子页面，以及首页里指向它们的链接</td><td></td></tr><tr><td>5</td><td><b>实际走一遍</b></td><td>在新电脑或新 WSL 上照着首页从头做到案例成功，遇到不对的地方先改步骤</td><td>steps/5-walkthrough.md：在哪里验证、每一步的结果、哪些没验证</td><td></td></tr><tr><td>6</td><td><b>用户以新手眼光读并改</b></td><td>请用户读首页，一条一条提意见；中英文一起改，一次改一件事；直到用户满意</td><td>steps/6-review.md：每条意见、改了什么（提交号），以及用户满意的原话</td><td>是</td></tr><tr><td>7</td><td><b>决定要不要变成通用规则</b></td><td>对每条新要求问用户要不要变成通用规则；要的话同时更新 human-docs（中英文和精简版），在 CHANGELOG 写明原因</td><td>steps/7-rules.md：每条要求的决定，以及改动的文件</td><td>是</td></tr></table>
+<h2>用户的原话</h2>
+<p>每个需要用户拍板的步骤，都是用户确认以后才往下走的。用户当时说：</p>
+<p class='who'>描述你的方法</p><blockquote>没问题，大概就是这样</blockquote><p class='who'>拆成步骤</p><blockquote>可以</blockquote><p class='who'>生成工作流</p><blockquote>没问题，可以用这个工作流</blockquote><p class='who'>试跑一次</p><blockquote>确认，可以写成经典案例</blockquote>
+<h2>第一次运行</h2>
+<p>新工作流做好后马上运行了一次：运行 <code>2026-10-31_durweg-readme</code>，检查结果 <span class='pass'>PASS</span>。</p>
+<p>那次运行里用户的决定：</p><p class='who'>定核心：第一句</p><blockquote>很好</blockquote><p class='who'>用户以新手眼光读并改</p><blockquote>很满意</blockquote><p class='who'>决定要不要变成通用规则</p><blockquote>写进通用规则（推荐）</blockquote>
+<h2>经验</h2>
+<ul><li>README 第一句不讲故事，只说项目的核心价值、解决什么问题。</li><li>写完一定要用新手的眼光读一遍：哪里读不下去，就改哪里，一次只改一件事。</li><li>每节标题加 emoji；同样几项要比较的内容用表格，按顺序做的步骤用编号列表。</li><li>真实用过才知道缺什么：比如先装 Codex、后装 Claude，就不知道 Claude 能不能用 Durweg，这种问题要写进常见问题。</li><li>每条新要求改完都问一句：要不要变成以后所有项目的通用规则。</li></ul>
+<h2>自己用这个工作流</h2>
+<p>装好 Durweg 以后，把工作流文件夹 human-readme 放进方法库（durweg library add &lt;文件夹&gt; --name human-readme），然后对 agent 说：“用 durweg 运行 human-readme”。</p>
+<footer>Durweg · <code>human-readme</code></footer>
+</main></body></html>
