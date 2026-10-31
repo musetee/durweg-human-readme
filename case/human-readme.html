@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A README for people · 写给人看的 README · Durweg case</title><style>
+<title>A README for humans · 写给人看的 README · Durweg case</title><style>
 body{font:16px/1.65 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#1f2328;
 background:#f6f8fa;margin:0}
 main{max-width:860px;margin:2.5rem auto;padding:2rem 2.5rem;background:#fff;border:1px solid #d0d7de;
@@ -33,11 +33,11 @@ html:not(.en):not(.zh) [data-lang=en]{display:block}
 <body><main>
 <div class="langs" role="group" aria-label="Language"><button type="button" data-to="en" aria-pressed="true">English</button><button type="button" data-to="zh" aria-pressed="false" lang="zh">中文</button></div>
 <div data-lang="en">
-<header><span class="tag">Durweg case</span><h1>A README for people</h1>
+<header><span class="tag">Durweg case</span><h1>A README for humans</h1>
 <p>Made with Durweg on 2026-10-31. Workflow: human-readme.</p></header>
 <h2>The method</h2>
 <h3>Task</h3>
-<p>Write a project's README (the front page, for people) so that someone who comes for the first time sees on the first screen what problem the project solves, picks the one way to install for their computer, knows how to use it every day and where their files are, gets an example working, and knows where to go next.</p>
+<p>Write a project's README (the front page, written for human readers, not for AI agents) so that someone who comes for the first time sees on the first screen what problem the project solves, picks the one way to install for their computer, knows how to use it every day and where their files are, gets an example working, and knows where to go next.</p>
 <h3>How I do it</h3>
 <ul><li>Find the core: one sentence with the project's core value and the problem it solves, as the README's first sentence; no story, no list of features</li><li>Pick the reader and the default path: write for a first-time user by default; one install line per kind of computer, saying which line the easily confused cases take (e.g. WSL on Windows uses the Windows installer)</li><li>Build the front page, each part its own section: install (only installing) → every day (numbered small steps, the first says how to open the terminal) → where the files are and how to find them → example (its first sentence says what it shows and makes, and it refers to the daily steps) → I want to … (one task per line, with a link) → the list of explanations at the end</li><li>Move details off the front page: step-by-step install, special regions, uninstall, full option and command tables each get their own page (in Chinese and English); the front page keeps one sentence and a link</li><li>Walk it once for real: on a new computer or a new WSL, follow the front page from the start until the example succeeds; write down where it was verified, the result and what was not verified</li><li>The user reads it with a beginner's eyes and gives comments one by one</li><li>Change this project's README by the comments, Chinese and English together, one thing at a time</li><li>After each comment is done, ask the user whether it should become a general rule; if yes, update the human-docs rules (Chinese, English and the short version) and write the reason in the CHANGELOG</li><li>Repeat "walk it → read → change" until the user is happy</li></ul>
 <h3>Where it goes wrong</h3>
@@ -89,7 +89,7 @@ html:not(.en):not(.zh) [data-lang=en]{display:block}
 </main>
 <script>
 (function(){
-  var root=document.documentElement, titles={en:"A README for people · Durweg case",
+  var root=document.documentElement, titles={en:"A README for humans · Durweg case",
     zh:"写给人看的 README · Durweg 案例"};
   function show(l){
     root.className=l; root.lang=l==="zh"?"zh":"en"; document.title=titles[l];
