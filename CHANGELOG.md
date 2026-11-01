@@ -1,6 +1,6 @@
 # Changelog
 
-## 2026-11-02: the rules live in this workflow
+## 2026-11-01: the rules live in this workflow
 
 - The rules for READMEs and other docs for people are now part of this workflow:
   [`skills/human-readme/guide.md`](skills/human-readme/guide.md) and
